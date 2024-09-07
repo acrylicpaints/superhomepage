@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <style>
+        .header {
+            font-family: "Montserrat", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 200;
+            font-style: normal;
+                }
         .center {
-                    text-align: center;
-                    margin: 200px;
-                    scale: 1.5;
+            text-align: center;
+            margin: 200px;
+            scale: 1.5;
                 }
     </style>
 </head>
 <div class="center">
-    <b>
-        <h1>search stuff</h1>
-    </b>
+    <div class="header">
+        <b>
+            <h1>search stuff</h1>
+        </b>
+    </div>
     <form method="get" action="https://www.google.com/search">
-        <input type="text" name="q" size="31" value="">
+        <input type="text" id="google" name="q" size="31" value="" placeholder="Google">  
     </form>
-    <br>
-    <form method="get" action="https://www.pinterest.com/search/pins">
-        <input type="text" name="q" size="21" value="">
-    </form>
+    <input type="submit" value="Submit">
     <br>
     <a href="https://discord.com/app">discord</a>
 </div>
