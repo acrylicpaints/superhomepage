@@ -40,8 +40,9 @@
 </head>
 <div class="center">
         <h1>seek, and you will find.</h1>
-    <form method="get" action="https://www.google.com/search">
-        <input type="text" id="google" name="q" size="31" value="" placeholder="Google"> 
+    <form autocomplete="off" method="get" action="https://www.google.com/search">
+        <input type="text" id="google" name="q" size="31" value="" placeholder="Google">
+            <input autocomplete="false" name="hidden" type="text" style="display:none;">
     </form>
     <br>
     <a href="https://discord.com/app">discord</a>
