@@ -1,11 +1,25 @@
 <!DOCTYPE html>
 <head>
     <title>seeker</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <style>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+            <script>
+            function notes() {
+                if (typeof(Storage) !== "undefined") {
+                  if (localStorage.notes) {
+                    localStorage.notes = Number(localStorage.notes)+1;
+                  } else {
+                    localStorage.notes = "you can write your notes here";
+                  }
+                  document.getElementById("notes").innerHTML = localStorage.notes;
+                } else {
+                  document.getElementById("notes").innerHTML = "no notes! outdated browser?";
+                }
+              }
+              </script>
+<style>
         * {
             margin: 0;
             padding: 0;
@@ -38,7 +52,7 @@
             width: 40%;
                 }
         input[type=text] {
-            width: 30%;
+            width: 20%;
             padding: 6px 10px;
             margin: 8px 0;
             display: inline-block;
@@ -53,7 +67,7 @@
             transition: width 0.5s ease-in-out;
                 }
         input[type=text]:focus {
-            width: 65%;
+            width: 50%;
             font-weight: 500;
             border: 1px solid #8c8e8f
                 }
@@ -89,11 +103,11 @@
 </head>
 <body>
     <div class="center">
-            <h1>seek, and you will find.</h1>
+            <h1 contenteditable="">seek, and you will find.</h1>
         <form autocomplete="off" method="get" action="https://www.google.com/search">
             <input autocomplete="false" type="text" id="google" name="q" size="31" value="" placeholder="Google">
         </form>
-        <span contenteditable="true">
+        <span contenteditable="true" id="notes">
         </span>
     </div>
 </body>
