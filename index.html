@@ -34,9 +34,11 @@
             scale: 1.5;
             margin: auto;
             text-align: center;
+            overflow: hidden;
+            width: 40%;
                 }
         input[type=text] {
-            width: 40%;
+            width: 30%;
             padding: 6px 10px;
             margin: 8px 0;
             display: inline-block;
@@ -48,21 +50,41 @@
             font-style: normal;
             outline: none;
             box-shadow: none;
-            transition: width 0.4s ease-in-out;
+            transition: width 0.5s ease-in-out;
                 }
         input[type=text]:focus {
-            width: 60%;
+            width: 65%;
             font-weight: 500;
             border: 1px solid #8c8e8f
                 }
-        a {
+        span {
             font-family: "Montserrat", sans-serif;
             font-optical-sizing: auto;
-            font-weight: 100;
+            font-weight: 600;
+            font-size: 10px;
             font-style: normal;
             text-decoration: none;
-            color: indigo;
+            outline: none;
+            border-bottom: 1px solid #ccc;
+            border-radius: 15px;
+            width: 20%;
+            text-align: center;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            display: -webkit-inline-box;
+            -webkit-box-orient: vertical;
+            transition: width 0.5s ease-in-out;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            padding: 2px;
+            margin-top: 10px;
                 }
+        span:focus {
+            width: 40%;
+            -webkit-line-clamp: 10;
+            line-clamp: 10;
+        }
     </style>
 </head>
 <body>
@@ -71,7 +93,7 @@
         <form autocomplete="off" method="get" action="https://www.google.com/search">
             <input autocomplete="false" type="text" id="google" name="q" size="31" value="" placeholder="Google">
         </form>
-        <br>
-        <a href="https://discord.com/app">discord</a>
+        <span contenteditable="true">
+        </span>
     </div>
 </body>
