@@ -1,23 +1,42 @@
 <!DOCTYPE html>
 <head>
     <title>seeker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: 0;
+            background: rgb(227,227,237);
+            background: linear-gradient(0deg, rgba(227,227,237,1) 0%, rgba(255,255,255,1) 100%);
+        }
         h1 {
             font-family: "Montserrat", sans-serif;
             font-optical-sizing: auto;
             font-weight: 200;
             font-style: normal;
-                }
-        .center {
+            font-size: 24px;
             text-align: center;
-            margin: 250px;
+            }
+        .center {
             scale: 1.5;
+            margin: auto;
+            text-align: center;
                 }
         input[type=text] {
-            width: 30%;
+            width: 40%;
             padding: 6px 10px;
             margin: 8px 0;
             display: inline-block;
@@ -25,16 +44,16 @@
             border-radius: 15px;
             box-sizing: border-box;
             font-family: "Montserrat", sans-serif;
-            font-weight: 400;
+            font-weight: 300;
             font-style: normal;
             outline: none;
             box-shadow: none;
-            transition: width 1s ease-in-out;
+            transition: width 0.4s ease-in-out;
                 }
         input[type=text]:focus {
-            width: 40%
-            font-weight: 600
-            border: 2px solid #8c8e8f;
+            width: 60%;
+            font-weight: 500;
+            border: 1px solid #8c8e8f
                 }
         a {
             font-family: "Montserrat", sans-serif;
@@ -46,11 +65,13 @@
                 }
     </style>
 </head>
-<div class="center">
-        <h1>seek, and you will find.</h1>
-    <form autocomplete="off" method="get" action="https://www.google.com/search">
-        <input autocomplete="false" type="text" id="google" name="q" size="31" value="" placeholder="Google">
-    </form>
-    <br>
-    <a href="https://discord.com/app">discord</a>
-</div>
+<body>
+    <div class="center">
+            <h1>seek, and you will find.</h1>
+        <form autocomplete="off" method="get" action="https://www.google.com/search">
+            <input autocomplete="false" type="text" id="google" name="q" size="31" value="" placeholder="Google">
+        </form>
+        <br>
+        <a href="https://discord.com/app">discord</a>
+    </div>
+</body>
