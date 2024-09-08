@@ -89,7 +89,7 @@
 </head>
 <body>
     <div class="center">
-            <h1 contenteditable="">seek, and you will find.</h1>
+            <h1 contenteditable="" id="title"></h1>
         <form autocomplete="off" method="get" action="https://www.google.com/search">
             <input autocomplete="false" type="text" id="google" name="q" size="31" value="" placeholder="Google">
         </form>
@@ -112,5 +112,21 @@
         notesElement.innerHTML = localStorage.notes || "my notes...";
     }
     retrieveNote();
+
+    function retrieveTitle() {
+        const titleElement = document.getElementById("title");
+
+        titleElement.addEventListener("input", () => {
+            localStorage.title = titleElement.innerHTML;
+        });
+
+        if (!titleElement) {
+            console.log("title element doesnt exist!! :(");
+            return;
+        }
+
+        titleElement.innerHTML = localStorage.title || "seek, and you will find.";
+    }
+    retrieveTitle();
 </script>
 </body>
