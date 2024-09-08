@@ -11,6 +11,8 @@
             padding: 0;
         }
         body {
+            background: rgb(227,227,237);
+            background: linear-gradient(0deg, rgba(227,227,237,1) 0%, rgba(255,255,255,1) 100%);
             position: absolute;
             left: 0;
             right: 0;
@@ -19,8 +21,6 @@
             display: flex;
             align-items: center;
             justify-content: 0;
-            background: rgb(227,227,237);
-            background: linear-gradient(0deg, rgba(227,227,237,1) 0%, rgba(255,255,255,1) 100%);
         }
         h1 {
             font-family: "Montserrat", sans-serif;
@@ -84,19 +84,21 @@
             width: 40%;
             -webkit-line-clamp: 10;
             line-clamp: 10;
-            text-weight: 600;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
     <div class="center">
             <h1 contenteditable="" id="title"></h1>
-        <form autocomplete="off" method="get" action="https://www.google.com/search">
-            <input autocomplete="false" type="text" id="google" name="q" size="31" value="" placeholder="Google">
-        </form>
+        <div id="searchbar">
+            <form autocomplete="off" method="get" action="https://www.google.com/search">
+                <input autocomplete="false" type="text" id="google" name="q" size="31" value="" placeholder="Google">
+            </form>
+        </div>
         <span contenteditable="true" id="notes">
         </span>
-    </div>
+    </div> 
 <script>
     function retrieveNote() {
         const notesElement = document.getElementById("notes");
