@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <title>seeker</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="viewport" content="width=device-width, initial-scale=0.8"/>
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -21,6 +21,9 @@
             display: flex;
             align-items: center;
             justify-content: 0;
+        }
+        .searchsite {
+            margin: 10px;
         }
         h1 {
             font-family: "Montserrat", sans-serif;
@@ -75,8 +78,8 @@
             display: -webkit-inline-box;
             -webkit-box-orient: vertical;
             transition: width 0.5s ease-in-out;
-            -webkit-line-clamp: 2;
-            line-clamp: 2;
+            -webkit-line-clamp: 1;
+            line-clamp: 1;
             padding: 2px;
             margin-top: 10px;
                 }
@@ -97,9 +100,33 @@
             </form>
         </div>
         <span contenteditable="true" id="notes">
-        </span>
+        </span><br>
+        <button class="searchsite">advanced settings</button>
+        <div class="panel">
+            <button class="websites">Google</button>
+            <button class="websites">Pinterest</button>
+            <button class="websites">Yandex</button>
+        </div>
     </div> 
+    <script>
+
+    </script>
 <script>
+
+var sacc = document.getElementsByClassName("searchsite");
+var advanced;
+
+for (advanced = 0; advanced < sacc.length; advanced++) {
+  sacc[advanced].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
     function retrieveNote() {
         const notesElement = document.getElementById("notes");
 
@@ -112,7 +139,7 @@
             return;
         }
 
-        notesElement.innerHTML = localStorage.notes || "my notes...";
+        notesElement.innerHTML = localStorage.notes || "my notes<br><br>here you can write your<br>notes. they will be stored<br>locally in your browser.";
     }
     retrieveNote();
 
