@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <title>seeker</title>
-        <meta name="viewport" content="width=device-width, initial-scale=0.8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=0.4"/>
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -101,32 +101,8 @@
         </div>
         <span contenteditable="true" id="notes">
         </span><br>
-        <button class="searchsite">advanced settings</button>
-        <div class="panel">
-            <button class="websites">Google</button>
-            <button class="websites">Pinterest</button>
-            <button class="websites">Yandex</button>
-        </div>
     </div> 
-    <script>
-
-    </script>
 <script>
-
-var sacc = document.getElementsByClassName("searchsite");
-var advanced;
-
-for (advanced = 0; advanced < sacc.length; advanced++) {
-  sacc[advanced].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var panel = this.nextElementSibling;
-    if (panel.style.display === "block") {
-      panel.style.display = "none";
-    } else {
-      panel.style.display = "block";
-    }
-  });
-}
     function retrieveNote() {
         const notesElement = document.getElementById("notes");
 
